@@ -51,7 +51,8 @@ class Teams extends Component {
   componentWillMount() {
     const config = {
       headers: {
-        "X-Auth-Token": "30ea7fb651f44392abedbb05d36eec2b"
+        "X-Auth-Token": "30ea7fb651f44392abedbb05d36eec2b",
+        'Access-Control-Allow-Origin': '*'
       }
     };
 
@@ -67,7 +68,8 @@ class Teams extends Component {
 
       const config = {
         headers: {
-          "X-Auth-Token": "30ea7fb651f44392abedbb05d36eec2b"
+          "X-Auth-Token": "30ea7fb651f44392abedbb05d36eec2b",
+          'Access-Control-Allow-Origin': '*'
         }
       };
   
