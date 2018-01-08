@@ -51,10 +51,6 @@ class Fixtures extends Component {
     const config = {
       headers: {
         'X-Auth-Token': "30ea7fb651f44392abedbb05d36eec2b",
-        'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8',
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET,POST,PUT,DELETE,OPTIONS',
-        'Access-Control-Allow-Headers': "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With"
       }
     };
 
