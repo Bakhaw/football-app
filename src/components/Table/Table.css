@@ -1,0 +1,33 @@
+.posRow {
+  width: 20px;
+}
+
+.teamRow {
+  width: 250px;
+}
+
+.imgRow {
+  width: 35px;
+  height: 35px;
+  margin-right: 10px;
+}
+
+.pointsRow {
+  width: 80px;
+}
+
+.playedRow {
+  width: 80px;
+}
+
+.winRow {
+  width: 80px;
+}
+
+.drawRow {
+  width: 80px;  
+}
+
+.loseRow {
+  /* width: 70px;   */
+}

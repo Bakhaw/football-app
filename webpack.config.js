@@ -15,17 +15,17 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel',
         query: {
-            presets: ['es2015']
+            presets: ['es2015', 'env', 'react'],
+            plugins: ['transform-class-properties', 'transform-runtime']
         }
       },
       {
-        test: /\.less$/,
-        loader: "style!css!less"
+        test: /\.css$/,
+        loaders: ['style-loader', 'css-loader']
       },
       {
-        test: /\.(jpg|png|gif)$/,
-        include: /img/,
-        loader: 'url'
+        test: /\.(gif|png|jpe?g|svg)$/i,
+        loader: 'url-loader'
       },
     ]
   },
@@ -34,12 +34,6 @@ module.exports = {
     new CopyWebpackPlugin([
       { from: './src/index.html' }
     ]),
-    new CopyWebpackPlugin([
-      { from: './src/vendors/phaser.min.js' }
-    ]),
-    new CopyWebpackPlugin([
-      { from: './src/assets', to: 'assets' }
-    ])
   ],
 
   resolve: {

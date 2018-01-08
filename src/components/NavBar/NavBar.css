@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif');
+
+.navigation a:hover {
+  text-decoration: none;
+}
+
+.ion-navicon {
+  font-size: 35px;
+}
+
+.buttonContainer {
+  width: 100%; 
+  height: 5vh;
+}
+
+.navigationButton {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
