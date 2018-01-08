@@ -57,7 +57,7 @@ class Teams extends Component {
 
     // Dynamic request => ${this.props.teamUrl} passed in Navbar component
     axios
-      .get(`http://api.football-data.org/v1/competitions/${this.props.teamUrl}/teams`, config)
+      .get(`https://api.football-data.org/v1/competitions/${this.props.teamUrl}/teams`, config)
       .then(res => this.setState({ data: res.data.teams, fetched: true }));
   }
 
@@ -73,7 +73,7 @@ class Teams extends Component {
   
       // Dynamic request => ${this.props.teamUrl} passed in Navbar component
       axios
-        .get(`http://api.football-data.org/v1/competitions/${nextProps.teamUrl}/teams`, config)
+        .get(`https://api.football-data.org/v1/competitions/${nextProps.teamUrl}/teams`, config)
         .then(res => this.setState({ data: res.data.teams, fetched: true }));
     }
   }
