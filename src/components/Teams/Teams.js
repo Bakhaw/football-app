@@ -51,13 +51,13 @@ class Teams extends Component {
   componentWillMount() {
     const config = {
       headers: {
-        "X-Auth-Token": "30ea7fb651f44392abedbb05d36eec2b",
+        "X-Auth-Token": "30ea7fb651f44392abedbb05d36eec2b"
       }
     };
 
     // Dynamic request => ${this.props.teamUrl} passed in Navbar component
     axios
-      .get(`https://api.football-data.org/v1/competitions/${this.props.teamUrl}/teams`, config)
+      .get(`http://api.football-data.org/v1/competitions/${this.props.teamUrl}/teams`, config)
       .then(res => this.setState({ data: res.data.teams, fetched: true }));
   }
 
@@ -67,13 +67,13 @@ class Teams extends Component {
 
       const config = {
         headers: {
-          "X-Auth-Token": "30ea7fb651f44392abedbb05d36eec2b",
+          "X-Auth-Token": "30ea7fb651f44392abedbb05d36eec2b"
         }
       };
   
       // Dynamic request => ${this.props.teamUrl} passed in Navbar component
       axios
-        .get(`https://api.football-data.org/v1/competitions/${nextProps.teamUrl}/teams`, config)
+        .get(`http://api.football-data.org/v1/competitions/${nextProps.teamUrl}/teams`, config)
         .then(res => this.setState({ data: res.data.teams, fetched: true }));
     }
   }

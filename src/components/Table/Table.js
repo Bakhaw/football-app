@@ -28,11 +28,11 @@ class LeagueTable extends Component {
   async componentWillMount() {
     const config = {
       headers: {
-        'X-Auth-Token': "30ea7fb651f44392abedbb05d36eec2b",
+        "X-Auth-Token": "30ea7fb651f44392abedbb05d36eec2b"
       }
     };
 
-    const res = await axios.get(`https://api.football-data.org/v1/competitions/${this.props.teamUrl}/leagueTable/?matchday=22`,
+    const res = await axios.get(`http://api.football-data.org/v1/competitions/${this.props.teamUrl}/leagueTable/?matchday=22`,
       config
     );
     const table = await res.data;

@@ -4,7 +4,7 @@ import { HashRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import Championnats from '../Teams/Championnats';
 
 // Constans imports for the Dynamic Fetch
-import { PL, L1, PD, B, SA } from './Constants';
+import { CL, PL, L1, L2, PD, B, SA, SB } from './Constants';
 
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
@@ -49,12 +49,22 @@ class NavBar extends Component {
               <MenuItem>Accueil</MenuItem>
             </Link>
           
+            <Link to="/championnats/champions-league" onClick={this.handleClose}>
+              <MenuItem>Champions League</MenuItem>
+            </Link>
+
             <Link to="/championnats/premier-league" onClick={this.handleClose}>
               <MenuItem>Premier League</MenuItem>
             </Link>
+
             <Link to="/championnats/ligue-1" onClick={this.handleClose}>
               <MenuItem>Ligue 1</MenuItem>
             </Link>
+
+            <Link to="/championnats/ligue-2" onClick={this.handleClose}>
+              <MenuItem>Ligue 2</MenuItem>
+            </Link>
+
             <Link to="/championnats/primeira-division" onClick={this.handleClose}>
               <MenuItem>Primeria Division</MenuItem>
             </Link>
@@ -66,16 +76,23 @@ class NavBar extends Component {
             <Link to="/championnats/serie-a" onClick={this.handleClose}>
               <MenuItem>Serie A</MenuItem>
             </Link>
+
+            <Link to="/championnats/serie-b" onClick={this.handleClose}>
+              <MenuItem>Serie B</MenuItem>
+            </Link>
           
         </Drawer>
 
 
           <Switch>
+            <Route path="/championnats/champions-league" render={CL}/>
             <Route path="/championnats/premier-league" render={PL}/>
             <Route path="/championnats/ligue-1" render={L1}/>
-            <Route path="/championnats/primeira-division" render={PD}/>
+            <Route path="/championnats/ligue-2" render={L2}/>
+            <Route path="/championnats/primera-division" render={PD}/>
             <Route path="/championnats/bundesliga" render={B}/>
             <Route path="/championnats/serie-a" render={SA}/>
+            <Route path="/championnats/serie-b" render={SB}/>
             <Route path="/" component={Championnats}/>
           </Switch>
 

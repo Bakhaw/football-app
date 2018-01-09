@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
+import ChampCard from './ChampCard';
 import TableDialog from './TableDialog';
 
-import logoBpl from './images/bg-bpl.png';
-import logoLigue1 from './images/bg-ligue1.png';
-import logoPrimeiraDivision from './images/bg-primeira-division.png';
-import logoBundesliga from './images/bg-bundesliga.png';
-import logoSerieA from './images/bg-serieA.png';
+import logoBpl from './images/logo-bpl.png';
+import logoLigue1 from './images/logo-ligue-1.png';
+import logoLigue2 from './images/logo-ligue-2.png';
+import logoPrimeraDivision from './images/logo-primera-division.png';
+import logoBundesliga from './images/logo-bundesliga.png';
+import logoSerieA from './images/logo-serie-a.png';
+import logoSerieB from './images/logo-serie-b.png';
+import logoChampionsLeague from './images/logo-champions-league.png';
 
 import './stylesheets/Championnats.css';
 
@@ -19,90 +23,45 @@ class Championnats extends Component {
         <h1>CHAMPIONNATS</h1>
         <div className="cardsContainer">
 
-        <div className="champCard">
-          <img src={logoBpl} alt="Barclays Premier League"/>
-          <div className="champButtons">
-              <div>
-                <Link to="/championnats/premier-league"
-                      className="championnatCard button">
-                  <i className="ion-flag"></i>
-                </Link>
-              </div>
+        <ChampCard logo={logoBpl}
+                   champUrl='premier-league'
+                   teamUrl='445'
+                   title='PREMIER LEAGUE'/>
 
-              <div>
-                <TableDialog teamUrl='445'
-                             teamName='PREMIER LEAGUE'/>
-              </div>
-            </div>
-        </div>
+        <ChampCard logo={logoLigue1}
+                   champUrl='ligue-1'
+                   teamUrl='450'
+                   title='LIGUE 1'/>
 
-        <div className="champCard">
-          <img src={logoLigue1} alt="Ligue 1"/>
-          <div className="champButtons">
-              <div>
-                <Link to="/championnats/ligue-1"
-                      className="championnatCard button">
-                  <i className="ion-flag"></i>
-                </Link>
-              </div>
+        <ChampCard logo={logoLigue2}
+                   champUrl='ligue-2'
+                   teamUrl='451'
+                   title='LIGUE 2'/>
 
-              <div>
-                <TableDialog teamUrl='450'
-                             teamName='LIGUE 1'/>
-              </div>
-            </div>
-        </div>
+        <ChampCard logo={logoPrimeraDivision}
+                   champUrl='primera-division'
+                   teamUrl='455'
+                   title='PRIMERA DIVISION'/>
 
-        <div className="champCard">
-          <img src={logoPrimeiraDivision} alt="Primeira Division"/>
-          <div className="champButtons">
-              <div>
-                <Link to="/championnats/primeira-division"
-                      className="championnatCard button">
-                  <i className="ion-flag"></i>
-                </Link>
-              </div>
+        <ChampCard logo={logoBundesliga}
+                   champUrl='bundesliga'
+                   teamUrl='452'
+                   title='BUNDESLIGA'/>
 
-              <div>
-                <TableDialog teamUrl='455'
-                             teamName='PRIMEIRA DIVISION'/>
-              </div>
-            </div>
-        </div>
+        <ChampCard logo={logoSerieA}
+                   champUrl='serie-a'
+                   teamUrl='456'
+                   title='SERIE A'/>
 
-        <div className="champCard">
-          <img src={logoBundesliga} alt="Bundesliga"/>
-          <div className="champButtons">
-              <div>
-                <Link to="/championnats/bundesliga"
-                      className="championnatCard button">
-                  <i className="ion-flag"></i>
-                </Link>
-              </div>
+        <ChampCard logo={logoSerieB}
+                   champUrl='serie-b'
+                   teamUrl='459'
+                   title='SERIE B'/>
 
-              <div>
-                <TableDialog teamUrl='452'
-                             teamName='BUNDESLIGA'/>
-              </div>
-            </div>
-        </div>
-
-        <div className="champCard">
-          <img src={logoSerieA} alt="Serie A"/>
-          <div className="champButtons">
-              <div>
-                <Link to="/championnats/serie-a"
-                      className="championnatCard button">
-                  <i className="ion-flag"></i>
-                </Link>
-              </div>
-
-              <div>
-                <TableDialog teamUrl='456'
-                             teamName='SERIE A'/>
-              </div>
-            </div>
-        </div>
+        <ChampCard logo={logoChampionsLeague}
+                   champUrl='champions-league'
+                   teamUrl='464'
+                   title='CHAMPIONS LEAGUE'/>
 
         </div>
       </div>

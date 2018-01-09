@@ -1,10 +1,11 @@
-var CopyWebpackPlugin = require('copy-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const path = require('path');
 
 module.exports = {
-  entry: './src/js/main.js',
+  entry: path.resolve(__dirname, 'src', 'index.js'),
 
   output: {
-    path: './dist',
+    path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
   },
 
@@ -13,7 +14,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel',
+        loader: 'babel-loader',
         query: {
             presets: ['es2015', 'env', 'react'],
             plugins: ['transform-class-properties', 'transform-runtime']
@@ -32,17 +33,19 @@ module.exports = {
 
   plugins: [
     new CopyWebpackPlugin([
-      { from: './src/index.html' }
+      {
+        from: path.resolve(__dirname, 'src', 'index.html')
+      },
+      {
+        from: path.resolve(__dirname, 'src/components/Teams/images'),
+        to: path.resolve(__dirname, 'dist/images')
+      },
     ]),
   ],
-
-  resolve: {
-    extensions: ['', '.js', '.jsx']
-  },
 
   devServer: {
     inline: true,
     contentBase: './dist',
-    port: 5000
+    port: 3000
   }
 };
