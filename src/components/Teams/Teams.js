@@ -113,6 +113,7 @@ class Teams extends Component {
             <ul className="teamsContainer">
               {teams.map((team, index) => (
                 <li key={index} className="teamCard">
+                {console.log(`http://api.football-data.org/v1/competitions/${this.props.teamUrl}/teams`)}
                   <div className="teamInfos">
                     <div>
                       <img src={team.crestUrl} alt="écusson de l'équipe" />

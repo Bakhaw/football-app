@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 import ChampCard from './ChampCard';
+import ChampionsLeagueCard from './ChampionsLeagueCard';
 import TableDialog from './TableDialog';
 
 import logoBpl from './images/logo-bpl.png';
@@ -58,7 +59,7 @@ class Championnats extends Component {
                    teamUrl='459'
                    title='SERIE B'/>
 
-        <ChampCard logo={logoChampionsLeague}
+        <ChampionsLeagueCard logo={logoChampionsLeague}
                    champUrl='champions-league'
                    teamUrl='464'
                    title='CHAMPIONS LEAGUE'/>

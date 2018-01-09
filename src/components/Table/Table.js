@@ -32,12 +32,11 @@ class LeagueTable extends Component {
       }
     };
 
-    const res = await axios.get(`http://api.football-data.org/v1/competitions/${this.props.teamUrl}/leagueTable/?matchday=22`,
+    const res = await axios.get(`http://api.football-data.org/v1/competitions/${this.props.teamUrl}/leagueTable/`,
       config
     );
     const table = await res.data;
     this.setState({ table: [table], fetched: true });
-    console.log(this.state.table[0].standing);
   }
 
   render() {
@@ -53,6 +52,7 @@ class LeagueTable extends Component {
         {this.state.fetched && (
           <ul>
             <li>
+              {console.log(`http://api.football-data.org/v1/competitions/${this.props.teamUrl}/leagueTable`)}
               <Table>
                 <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
                   <TableRow>

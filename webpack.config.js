@@ -2,7 +2,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 
 module.exports = {
-  entry: path.resolve(__dirname, 'src', 'index.js'),
+  entry: path.resolve(__dirname, 'src', 'index'),
 
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -34,7 +34,7 @@ module.exports = {
   plugins: [
     new CopyWebpackPlugin([
       {
-        from: path.resolve(__dirname, 'src', 'index.html')
+        from: path.resolve(__dirname, 'public', 'index.html')
       },
       {
         from: path.resolve(__dirname, 'src/components/Teams/images'),
