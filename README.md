@@ -10,13 +10,13 @@ $ git clone https://github.com/Bakhaw/football-app.git
 
 ```
 $ cd football-app/
-$ yarn install or npm install
+$ npm install
 ```
 
 ### Start the application
 
 ```
-$ yarn start or npm start
+$ npm start
 ```
 
 #### If you are not redirected, visit localhost:3000 on your favorite browser !
