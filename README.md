@@ -1,31 +1,22 @@
-# phaser-webpack-es6
+## Football Application
 
-A simple **Phaser Webpack ES6 boilerplate**.
+### Clone the project
 
-If you like to develop with [webpack][webpackSite], then this package can be your starting point for [Phaser][phaserSite] projects.
+```
+$ git clone https://github.com/Bakhaw/football-app.git
+```
 
-If you like to develop with webpack and publish in [Heroku][herokuSite], this can be also your starting point project.
+### Go to the folder and install all the required dependencies
 
-## Project Structure
+```
+$ cd football-app/
+$ yarn install or npm install
+```
 
-This project runs a [webpack-dev-server][webpackDevServerSite] for development, and runs an express server to deploy on heroku. If you want to deploy your project on your heroku account, the only thing you need to do is type `git push heroku yourproject`. You can edit any file under the `src` directory.
+### Start the application
 
-## Project Setup
+```
+$ yarn start or npm start
+```
 
-1. Clone or download the project.
-2. The entry file is **/src/js/main.js**. You can overwrite this.
-3. Run `npm run dev` and visit [http://localhost:5000](http://localhost:5000).
-
-[webpackSite]:https://webpack.github.io/
-[phaserSite]:https://phaser.io/
-[herokuSite]:https://www.heroku.com/
-[webpackDevServerSite]:https://webpack.github.io/docs/webpack-dev-server.html
-
-## License
-
-This project is totally free for your use.
-
-Any included software are copyright to their respective authors and mostly under MIT or [SIL OFL][silOfl].
-
-
-
+#### If you are not redirected, visit localhost:3000 on your favorite browser !
