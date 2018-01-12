@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import apiKey from '../../key'
 
 import CircularProgress from 'material-ui/CircularProgress';
 
@@ -50,7 +51,7 @@ class Fixtures extends Component {
   async componentWillMount() {
     const config = {
       headers: {
-        "X-Auth-Token": "30ea7fb651f44392abedbb05d36eec2b"
+        "X-Auth-Token": apiKey
       }
     };
 
@@ -60,6 +61,8 @@ class Fixtures extends Component {
   }
 
   render() {
+
+    console.log(apiKey)    
 
     const fixtures = this.state.fixtures.filter(fixture => {
       const str = (fixture.homeTeamName) + (fixture.awayTeamName);

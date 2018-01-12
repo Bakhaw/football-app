@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import apiKey from '../../key'
 
 import TextField from 'material-ui/TextField';
 import CircularProgress from 'material-ui/CircularProgress';
@@ -51,7 +52,7 @@ class Teams extends Component {
   componentWillMount() {
     const config = {
       headers: {
-        "X-Auth-Token": "30ea7fb651f44392abedbb05d36eec2b"
+        "X-Auth-Token": apiKey
       }
     };
 
@@ -67,7 +68,7 @@ class Teams extends Component {
 
       const config = {
         headers: {
-          "X-Auth-Token": "30ea7fb651f44392abedbb05d36eec2b"
+          "X-Auth-Token": apiKey
         }
       };
   
