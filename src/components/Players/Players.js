@@ -5,7 +5,7 @@ import config from '../../key'
 import sortFlags from './functions';
 import CircularProgress from 'material-ui/CircularProgress';
 
-import './Players.css';
+import './Players.scss';
 
 class Players extends Component {
 

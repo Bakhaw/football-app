@@ -8,7 +8,7 @@ import CircularProgress from 'material-ui/CircularProgress';
 import PlayersDialog from "./PlayersDialog";
 import FixturesDialog from "./FixturesDialog";
 
-import "./stylesheets/Teams.css";
+import "./stylesheets/Teams.scss";
 
 class Teams extends Component {
   constructor(props) {

@@ -14,7 +14,7 @@ import {
   TableRowColumn
 } from "material-ui/Table";
 
-import "./Table.css";
+import "./Table.scss";
 
 class LeagueTable extends Component {
   constructor(props) {

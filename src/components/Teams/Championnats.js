@@ -14,7 +14,7 @@ import logoSerieA from './images/logo-serie-a.png';
 import logoSerieB from './images/logo-serie-b.png';
 import logoChampionsLeague from './images/logo-champions-league.png';
 
-import './stylesheets/Championnats.css';
+import './stylesheets/Championnats.scss';
 
 class Championnats extends Component {
 

@@ -4,7 +4,7 @@ import config from '../../key'
 
 import CircularProgress from 'material-ui/CircularProgress';
 
-import "./Fixtures.css";
+import "./Fixtures.scss";
 
 const sortStatus = (status, date) => {
   switch (status) {

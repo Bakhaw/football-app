@@ -1,0 +1,241 @@
+.championnats {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    font-size: 30px;
+    margin: 15px 0;
+  }
+}
+
+.cardsContainer {
+  width: 100%;
+  min-height: 90vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.champCard {
+  position: relative;
+  height: 320px;
+  width: 28%;
+  margin: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.18);
+  img {
+    height: 150px;
+  }
+}
+
+.champButtons {
+  display: flex;
+  width: 100%;
+  height: 25%;
+  div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+}
+
+/* BUTTONS */
+
+.champCard .button {
+  font-size: 22px;
+  border: none;
+  border-radius: 5px;
+  height: 100%;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Mixin for buttons colors */
+@mixin gradientButton($color1, $color2, $color3, $color4) {
+  background: linear-gradient(to left, $color1, $color2);
+  &:hover {
+    background: linear-gradient(to left, $color3, $color4);
+  }
+}
+
+/* BPL */
+.champCard:first-child .button {
+  @include gradientButton(hsl(319, 90%, 30%), hsl(319, 90%, 12%), hsl(319, 90%, 45%), hsl(319, 90%, 27%));
+}
+
+/* LIGUE 1 */
+.champCard:nth-child(2) .button {
+  @include gradientButton(hsl(0, 1%, 46%), hsl(0, 1%, 12%), hsl(0, 1%, 61%), hsl(0, 1%, 27%));
+}
+
+/* LIGUE 2 */
+.champCard:nth-child(3) .button {
+  @include gradientButton(hsl(106, 21%, 62%), hsl(106, 21%, 42%), hsl(106, 21%, 72%), hsl(106, 21%, 52%));
+}
+
+/* PRIMEIRA DIVISION */
+.champCard:nth-child(4) .button {
+  @include gradientButton(hsl(58, 100%, 50%), hsl(58, 100%, 40%), hsl(58, 100%, 60%), hsl(58, 100%, 50%));
+}
+
+/* BUNDESLIGA */
+.champCard:nth-child(5) .button {
+  @include gradientButton(hsl(0, 100%, 50%), hsl(0, 100%, 28%), hsl(0, 100%, 65%), hsl(0, 100%, 43%));
+}
+
+/* SERIE A */
+.champCard:nth-child(6) .button {
+  @include gradientButton(hsl(212, 100%, 59%), hsl(212, 100%, 29%), hsl(212, 100%, 74%), hsl(212, 100%, 44%));
+}
+
+/* SERIE B */
+.champCard:nth-child(7) .button {
+  @include gradientButton(hsl(147, 100%, 35%), hsl(147, 100%, 15%), hsl(147, 100%, 50%), hsl(147, 100%, 30%));
+}
+
+/* CHAMPIONS LEAGUE */
+.champCard:nth-child(8) .button {
+  @include gradientButton(hsl(222, 60%, 22%), hsl(222, 60%, 5%), hsl(222, 60%, 37%), hsl(222, 60%, 20%));
+}
+
+.champButtons {
+  button:hover, .button:hover {
+    cursor: pointer;
+    transform: scale(1.03);
+    background: linear-gradient(hsl(140, 65%, 65%), hsl(190, 65%, 65%));
+    transition: 0.2s;
+  }
+  i {
+    font-size: 35px;
+    color: white;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.20);
+  }
+}
+
+/* TOP OF THE CARDS */
+
+/* PREMIER LEAGUE */
+.champCard:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 15px;
+  top: -15px;
+  left: 0;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+/* Mixin for top of cards background-color */
+@mixin gradientBackground($color1, $color2) {
+  background: linear-gradient(to left, $color1, $color2);
+}
+
+/* BPL */
+.champCard:first-child::before {
+  @include gradientBackground(hsl(319, 90%, 30%), hsl(319, 90%, 12%))
+}
+
+/* LIGUE 1 */
+.champCard:nth-child(2):before {
+  @include gradientBackground(hsl(0, 1%, 46%), hsl(0, 1%, 12%))
+}
+
+.champCard:nth-child(3):before {
+  @include gradientBackground(hsl(106, 21%, 62%), hsl(106, 21%, 42%))
+}
+
+
+/* PRIMERA DIVISION */
+.champCard:nth-child(4):before {
+  @include gradientBackground(hsl(58, 100%, 50%), hsl(58, 100%, 40%))
+}
+
+/* BUNDESLIGA */
+.champCard:nth-child(5):before {
+  @include gradientBackground(hsl(0, 100%, 50%), hsl(0, 100%, 28%))
+}
+
+/* SERIE A */
+.champCard:nth-child(6):before {
+  @include gradientBackground(hsl(212, 100%, 59%), hsl(212, 100%, 29%))
+}
+
+/* SERIE B */
+.champCard:nth-child(7):before {
+  @include gradientBackground(hsl(147, 100%, 35%), hsl(147, 100%, 15%))
+}
+
+/* CHAMPIONS LEAGUE */
+.champCard:nth-child(8):before {
+  @include gradientBackground(hsl(222, 60%, 22%), hsl(222, 60%, 5%))
+}
+
+/* MOBILE */
+@media (max-width: 479px) {
+  .championnats h1 {
+    font-size: 25px;
+    margin: 15px 0;
+  }
+
+  .champCard {
+    width: 90%;
+    margin: 20px auto;
+  }
+}
+
+/* HIGH MOBILE */
+@media (min-width: 480px) and (max-width: 767px) {
+  .championnats h1 {
+    font-size: 25px;
+    margin: 15px 0;
+  }
+
+  .cardsContainer:last-child::after {
+    content: "";
+    width: 45%;
+    margin: 20px auto;
+  }
+
+  .champCard {
+    width: 45%;
+    margin: 20px auto;
+  }
+}
+
+/* TABLET */
+@media (min-width: 768px) and (max-width: 979px) {
+  .championnats h1 {
+    font-size: 28px;
+    margin: 15px 0;
+  }
+
+  .cardsContainer:last-child::after {
+    content: "";
+    width: 30%;
+    margin: 20px auto;
+  }
+
+  .champCard {
+    width: 30%;
+    margin: 20px auto;
+  }
+}
+
+/* LARGE DESKTOP */
+@media (min-width: 1600px) {
+  .champCard {
+    width: 20%;
+    margin: 20px 40px;
+  }
+}
