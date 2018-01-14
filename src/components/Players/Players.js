@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import moment from 'moment';
-import key from '../../key'
+import config from '../../key'
 import sortFlags from './functions';
 import CircularProgress from 'material-ui/CircularProgress';
 
@@ -20,12 +20,6 @@ class Players extends Component {
 
   // fetch players on the football API
   async componentWillMount() {
-
-    const config = {
-      headers: {
-        'X-Auth-Token': key.apiKey
-      },
-    };
 
     const res = await axios.get(this.props.playersUrl, config)
     const players = await res.data.players;

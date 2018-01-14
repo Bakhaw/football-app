@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import key from '../../key'
+import config from '../../key'
 
 import CircularProgress from 'material-ui/CircularProgress';
 
@@ -27,11 +27,6 @@ class LeagueTable extends Component {
 
   // fetch players
   async componentWillMount() {
-    const config = {
-      headers: {
-        "X-Auth-Token": key.apiKey
-      }
-    };
 
     const res = await axios.get(`http://api.football-data.org/v1/competitions/${this.props.teamUrl}/leagueTable/`,
       config
