@@ -11,7 +11,7 @@ const sortStatus = (status, date) => {
     case 'FINISHED':
       return (
       <div>
-        <p>{date.slice(0, 10)}</p>
+        <p className="date">{date.slice(0, 10)}</p>
         <h4 style={{ color: 'red' }}>{status}</h4>
       </div>
       )
@@ -20,8 +20,8 @@ const sortStatus = (status, date) => {
     case 'SCHEDULED':
       return (
       <div>
-        <p>{date.slice(0, 10)}</p>
         <h4 style={{ color: 'green' }}>{status}</h4>
+        <p>{date.slice(0, 10)}</p>        
         <h5>{date.slice(11, -4)}</h5>
       </div>
       )
@@ -29,8 +29,8 @@ const sortStatus = (status, date) => {
     default:
       return (
         <div>
-          <p>{date.slice(0, 10)}</p>
           <h4 style={{ color: 'black' }}>{status}</h4>
+          <p>{date.slice(0, 10)}</p>          
           <h5>{date.slice(11, -4)}</h5>
         </div>
       )
