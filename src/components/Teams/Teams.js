@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import apiKey from '../../key'
+import key from '../../key'
 
 import TextField from 'material-ui/TextField';
 import CircularProgress from 'material-ui/CircularProgress';
@@ -49,17 +49,19 @@ class Teams extends Component {
       searchFixture: e.target.value
     });
   };
+
   componentWillMount() {
     const config = {
       headers: {
-        "X-Auth-Token": apiKey
-      }
+        "X-Auth-Token": key.apiKey
+      },
     };
 
     // Dynamic request => ${this.props.teamUrl} passed in Navbar component
     axios
       .get(`http://api.football-data.org/v1/competitions/${this.props.teamUrl}/teams`, config)
-      .then(res => this.setState({ data: res.data.teams, fetched: true }));
+      .then(res => this.setState({ data: res.data.teams, fetched: true }))
+      .catch(err => console.log(err.response))      
   }
 
   componentWillReceiveProps(nextProps) {
@@ -68,14 +70,14 @@ class Teams extends Component {
 
       const config = {
         headers: {
-          "X-Auth-Token": apiKey
+          "X-Auth-Token": key.apiKey
         }
       };
   
       // Dynamic request => ${this.props.teamUrl} passed in Navbar component
       axios
         .get(`http://api.football-data.org/v1/competitions/${nextProps.teamUrl}/teams`, config)
-        .then(res => this.setState({ data: res.data.teams, fetched: true }));
+        .then(res => this.setState({ data: res.data.teams, fetched: true }))
     }
   }
 

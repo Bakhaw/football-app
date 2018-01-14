@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import apiKey from '../../key'
+import key from '../../key'
 
 class ChampionsLeagueTable extends Component {
   constructor(props) {
@@ -14,7 +14,7 @@ class ChampionsLeagueTable extends Component {
   async componentWillMount() {
     const config = {
       headers: {
-        "X-Auth-Token": apiKey
+        "X-Auth-Token": key.apiKey
       }
     };
 

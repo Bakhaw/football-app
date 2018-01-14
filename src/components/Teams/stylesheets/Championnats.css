@@ -245,3 +245,22 @@
     margin: 20px auto;
   }
 }
+
+/* LARGE DESKTOP */
+@media (min-width: 1600px) {
+  .championnats h1 {
+    font-size: 28px;
+    margin: 15px 0;
+  }
+
+  .cardsContainer:last-child::after {
+    content: "";
+    width: 30%;
+    margin: 20px auto;
+  }
+
+  .champCard {
+    width: 20%;
+    margin: 20px 40px;
+  }
+}

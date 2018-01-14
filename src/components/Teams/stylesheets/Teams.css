@@ -230,3 +230,12 @@ ul {
     transform: scale(0.95);
   }
 }
+
+/* LARGE DESKTOP */
+@media (min-width: 1600px) {
+  .teamCard {
+    width: 20%;
+    height: 340px;
+    margin: 40px;
+  }
+}
