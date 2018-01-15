@@ -1,6 +1,7 @@
 import React from "react";
 import Dialog from "material-ui/Dialog";
 import FlatButton from "material-ui/FlatButton";
+import TextField from 'material-ui/TextField';
 
 import Fixtures from "../Fixtures/Fixtures";
 
@@ -42,9 +43,7 @@ export default class FixturesDialog extends React.Component {
                 className="flag"
               />
               {this.props.teamName}
-              <input
-                type="text"
-                placeholder="Rechercher un match"
+              <TextField hintText="Rehercher un match"
                 onChange={this.props.updateSearch}
                 defaultValue={this.props.searchFixture}
               />

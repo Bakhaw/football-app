@@ -20,18 +20,27 @@ class Players extends Component {
 
   // fetch players on the football API
   async componentWillMount() {
-
-    const res = await axios.get(this.props.playersUrl, config)
-    const players = await res.data.players;
-    this.setState({ players, fetched: true })
+    try {
+      const res = await axios.get(this.props.playersUrl, config)
+      const players = await res.data.players;
+      this.setState({ players, fetched: true })
+      console.log('API football request resolved')
+    } catch (err) {
+      console.log(err, 'API football request rejected')
+    }
   }
 
   // fetch flags on the countries API
   async componentDidMount() {
     console.log('https://restcountries.eu/rest/v2/all')
-    const res = await axios.get('https://restcountries.eu/rest/v2/all');
-    const flags = await res.data;
-    this.setState({ flags });
+    try {
+      const res = await axios.get('https://restcountries.eu/rest/v2/all');
+      const flags = await res.data;
+      this.setState({ flags });
+      console.log('API flags request resolved')
+    } catch (err) {
+      console.log(err, 'API flags request rejected')
+    }
   }
 
   render() {

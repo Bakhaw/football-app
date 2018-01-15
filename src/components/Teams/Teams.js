@@ -105,7 +105,7 @@ class Teams extends Component {
 
         {this.state.fetched && (
           <div className="animated fadeIn">
-            <TextField hintText="Chercher une équipe"
+            <TextField hintText="Rechercher une équipe"
               onChange={this.updateSearchTeam}
             />
             <ul className="teamsContainer">
