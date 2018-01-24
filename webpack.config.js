@@ -16,13 +16,19 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
-            presets: ['es2015', 'env', 'react'],
-            plugins: ['transform-class-properties', 'transform-runtime']
+          presets: ['es2015', 'env', 'react'],
+          plugins: ['transform-class-properties', 'transform-runtime']
         }
       },
       {
-        test: /\.css$/,
-        loaders: ['style-loader', 'css-loader']
+        test: /\.scss$/,
+        use: [{
+          loader: "style-loader" // creates style nodes from JS strings
+        }, {
+          loader: "css-loader" // translates CSS into CommonJS
+        }, {
+          loader: "sass-loader" // compiles Sass to CSS
+        }]
       },
       {
         test: /\.(gif|png|jpe?g|svg)$/i,
@@ -37,7 +43,7 @@ module.exports = {
         from: path.resolve(__dirname, 'public', 'index.html')
       },
       {
-        from: path.resolve(__dirname, 'src/components/Teams/images'),
+        from: path.resolve(__dirname, 'src/components/Championnats/images'),
         to: path.resolve(__dirname, 'dist/images')
       },
     ]),

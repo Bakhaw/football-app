@@ -2,14 +2,13 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-}
-
-.dialogTitle input {
-  font-size: 20px;
-  padding: 0 55px;
-  border-radius: 5px;
-  border: 1px solid #efefef;
-  color: #333;
+  input {
+    font-size: 20px;
+    padding: 0 55px;
+    border-radius: 5px;
+    border: 1px solid #efefef;
+    color: #333;
+  }
 }
 
 .playersContainer {
@@ -17,6 +16,7 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+
 .playerCard {
   border: 2px solid black;
   padding: 10px 30px;
@@ -24,25 +24,19 @@
   width: 45%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between
-}
-
-.playerCard h3 {
-  color: black;
-}
-
-.playerCard p {
-  font-size: 20px;
-  color: hsl(0, 1%, 60%);
+  justify-content: space-between;
+  h3 {
+    color: black;
+  }
+  p {
+    font-size: 20px;
+    color: hsl(0, 1%, 40%);
+  }
 }
 
 .flag {
   width: 80px;
   height: 50px;
-}
-
-li {
-  list-style-type: none;
 }
 
 
@@ -57,21 +51,19 @@ li {
 
   .playerCard {
     width: 100%;
-  }
-
-  .playerCard h3 {
-    font-size: 20px;
-    font-weight: bold;
+    h3 {
+      font-size: 20px;
+      font-weight: bold;
+    }
   }
 
   .dialogTitle {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-
-  .dialogTitle input {
-    font-size: 16px;
+    input {
+      font-size: 16px;
+    }
   }
 
   .dialogTeamInfos {

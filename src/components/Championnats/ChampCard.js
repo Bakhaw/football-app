@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
-import TableDialog from './TableDialog';
+import TableDialog from '../Dialogs/TableDialog';
 
 export class ChampCard extends Component {
   render() {

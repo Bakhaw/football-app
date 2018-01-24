@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
-import ChampionsLeagueTableDialog from './ChampionsLeagueTableDialog';
+import ChampionsLeagueTableDialog from '../Dialogs/ChampionsLeagueTableDialog';
 
 export class ChampionsLeagueCard extends Component {
   render() {

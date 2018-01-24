@@ -1,16 +1,23 @@
 import React, { Component } from 'react';
 import { HashRouter as Router, Route, Link, Switch } from 'react-router-dom';
 
-import Championnats from '../Teams/Championnats';
+import Championnats from '../Championnats/Championnats';
 
 // Constans imports for the Dynamic Fetch
-import { CL, PL, L1, L2, PD, B, SA, SB } from './Constants';
+import { ChampionsLeague,
+         PremierLeague,
+         Ligue_1,
+         Ligue_2,
+         PrimeraDivision,
+         Bundesliga,
+         Serie_A,
+         Serie_B } from './constants';
 
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
 import RaisedButton from 'material-ui/RaisedButton';
 
-import './NavBar.css';
+import './NavBar.scss';
 
 class NavBar extends Component {
 
@@ -85,14 +92,14 @@ class NavBar extends Component {
 
 
           <Switch>
-            <Route path="/championnats/champions-league" render={CL}/>
-            <Route path="/championnats/premier-league" render={PL}/>
-            <Route path="/championnats/ligue-1" render={L1}/>
-            <Route path="/championnats/ligue-2" render={L2}/>
-            <Route path="/championnats/primera-division" render={PD}/>
-            <Route path="/championnats/bundesliga" render={B}/>
-            <Route path="/championnats/serie-a" render={SA}/>
-            <Route path="/championnats/serie-b" render={SB}/>
+            <Route path="/championnats/champions-league" render={ChampionsLeague}/>
+            <Route path="/championnats/premier-league" render={PremierLeague}/>
+            <Route path="/championnats/ligue-1" render={Ligue_1}/>
+            <Route path="/championnats/ligue-2" render={Ligue_2}/>
+            <Route path="/championnats/primera-division" render={PrimeraDivision}/>
+            <Route path="/championnats/bundesliga" render={Bundesliga}/>
+            <Route path="/championnats/serie-a" render={Serie_A}/>
+            <Route path="/championnats/serie-b" render={Serie_B}/>
             <Route path="/" component={Championnats}/>
           </Switch>
 

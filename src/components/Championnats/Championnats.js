@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import ChampCard from './ChampCard';
 import ChampionsLeagueCard from './ChampionsLeagueCard';
-import TableDialog from './TableDialog';
+import TableDialog from '../Dialogs/TableDialog';
 
 import logoBpl from './images/logo-bpl.png';
 import logoLigue1 from './images/logo-ligue-1.png';
@@ -14,7 +14,7 @@ import logoSerieA from './images/logo-serie-a.png';
 import logoSerieB from './images/logo-serie-b.png';
 import logoChampionsLeague from './images/logo-champions-league.png';
 
-import './stylesheets/Championnats.css';
+import './Championnats.scss';
 
 class Championnats extends Component {
 

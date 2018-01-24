@@ -1,17 +1,17 @@
 import React, { Component } from "react";
 import axios from "axios";
-import apiKey from '../../key'
+import config from '../../key'
 
 import CircularProgress from 'material-ui/CircularProgress';
 
-import "./Fixtures.css";
+import "./Fixtures.scss";
 
 const sortStatus = (status, date) => {
   switch (status) {
     case 'FINISHED':
       return (
       <div>
-        <p>{date.slice(0, 10)}</p>
+        <p className="date">{date.slice(0, 10)}</p>
         <h4 style={{ color: 'red' }}>{status}</h4>
       </div>
       )
@@ -20,8 +20,8 @@ const sortStatus = (status, date) => {
     case 'SCHEDULED':
       return (
       <div>
-        <p>{date.slice(0, 10)}</p>
         <h4 style={{ color: 'green' }}>{status}</h4>
+        <p>{date.slice(0, 10)}</p>        
         <h5>{date.slice(11, -4)}</h5>
       </div>
       )
@@ -29,8 +29,8 @@ const sortStatus = (status, date) => {
     default:
       return (
         <div>
-          <p>{date.slice(0, 10)}</p>
           <h4 style={{ color: 'black' }}>{status}</h4>
+          <p>{date.slice(0, 10)}</p>          
           <h5>{date.slice(11, -4)}</h5>
         </div>
       )
@@ -49,11 +49,6 @@ class Fixtures extends Component {
 
   // fetch players
   async componentWillMount() {
-    const config = {
-      headers: {
-        "X-Auth-Token": apiKey
-      }
-    };
 
     const res = await axios.get(this.props.fixturesUrl, config);
     const fixtures = res.data.fixtures;
@@ -61,8 +56,6 @@ class Fixtures extends Component {
   }
 
   render() {
-
-    console.log(apiKey)    
 
     const fixtures = this.state.fixtures.filter(fixture => {
       const str = (fixture.homeTeamName) + (fixture.awayTeamName);

@@ -1,6 +1,7 @@
 import React from "react";
 import Dialog from "material-ui/Dialog";
 import FlatButton from "material-ui/FlatButton";
+import TextField from 'material-ui/TextField';
 
 import Players from "../Players/Players";
 
@@ -38,9 +39,7 @@ export default class PlayersDialog extends React.Component {
           {this.props.teamName}
         </div>
         <div>
-          <input
-            type="text"
-            placeholder="Rechercher un joueur"
+          <TextField hintText="Rehercher un joueur"
             onChange={this.props.updateSearch}
             defaultValue={this.props.searchPlayer}
           />
