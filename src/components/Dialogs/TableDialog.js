@@ -21,7 +21,7 @@ export default class TableDialog extends React.Component {
     const style = {
       contentStyle: {
         width: "95%",
-        maxWidth: "none",
+        maxWidth: "none"
       }
     };
 
@@ -32,11 +32,11 @@ export default class TableDialog extends React.Component {
     return (
       <div className="dialog">
         <button onClick={this.handleOpen} className="button">
-          <i className="ion-podium"></i>
+          <i className="ion-podium" />
         </button>
         <Dialog
           contentStyle={style.contentStyle}
-          title={`${this.props.teamName} Classement 2017-2018`}
+          title={`${this.props.teamName} Classement 2018-2019`}
           actions={actions}
           modal={false}
           open={this.state.open}
@@ -46,7 +46,7 @@ export default class TableDialog extends React.Component {
           contentClassName="dialogContent"
           bodyClassName="dialogBody"
         >
-          <Table teamUrl={this.props.teamUrl}/>
+          <Table teamUrl={this.props.teamUrl} />
         </Dialog>
       </div>
     );

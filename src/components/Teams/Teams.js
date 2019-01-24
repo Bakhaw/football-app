@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
-import config from '../../key'
+import config from "../../key";
 
-import TextField from 'material-ui/TextField';
-import CircularProgress from 'material-ui/CircularProgress';
+import TextField from "material-ui/TextField";
+import CircularProgress from "material-ui/CircularProgress";
 
 import PlayersDialog from "../Dialogs/PlayersDialog";
 import FixturesDialog from "../Dialogs/FixturesDialog";
@@ -52,34 +52,44 @@ class Teams extends Component {
   };
 
   componentWillMount() {
-
     // Dynamic request => ${this.props.teamUrl} passed in Navbar component
     axios
-      .get(`http://api.football-data.org/v1/competitions/${this.props.teamUrl}/teams`, config)
+      // .get(`http://api.football-data.org/v2/competitions/2021/teams`, config)
+
+      .get(
+        `http://api.football-data.org/v2/competitions/${
+          this.props.teamUrl
+        }/teams`,
+        config
+      )
       .then(res => this.setState({ data: res.data.teams, fetched: true }))
-      .catch(err => this.setState({ fetchError: true, fetched: false }))
+      .catch(err => this.setState({ fetchError: true, fetched: false }));
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.teamUrl !== this.props.teamUrl) {
-      this.setState({ fetched: false })
+      this.setState({ fetched: false });
 
       // Dynamic request => ${this.props.teamUrl} passed in Navbar component
       axios
-        .get(`http://api.football-data.org/v1/competitions/${nextProps.teamUrl}/teams`, config)
+        .get(
+          `http://api.football-data.org/v1/competitions/${
+            nextProps.teamUrl
+          }/teams`,
+          config
+        )
         .then(res => this.setState({ data: res.data.teams, fetched: true }))
-        .catch(err => this.setState({ fetchError: true, fetched: false }))
+        .catch(err => this.setState({ fetchError: true, fetched: false }));
     }
   }
 
   render() {
-
     this.sortData();
 
     // Function to search a team by her name using the <input /> element
 
     const teams = this.state.data.filter(team => {
-      const str = (team.name) + (team.shortName);
+      const str = team.name + team.shortName;
 
       return (
         str.toLowerCase().indexOf(this.state.searchTeam.toLowerCase()) !== -1
@@ -88,30 +98,27 @@ class Teams extends Component {
 
     return (
       <div className="bigContainer">
-
         <header>
           <h1>{this.props.title}</h1>
         </header>
 
-        {this.state.fetchError &&
-          <h3>Erreur...</h3>
-        }
+        {this.state.fetchError && <h3>Erreur...</h3>}
 
-        {!this.state.fetched &&
+        {!this.state.fetched && (
           <div className="loading">
             <CircularProgress thickness={5} color="black" />
           </div>
-        }
+        )}
 
         {this.state.fetched && (
           <div className="animated fadeIn">
-            <TextField hintText="Rechercher une équipe"
+            <TextField
+              hintText="Rechercher une équipe"
               onChange={this.updateSearchTeam}
             />
             <ul className="teamsContainer">
               {teams.map((team, index) => (
                 <li key={index} className="teamCard">
-                  {console.log(`http://api.football-data.org/v1/competitions/${this.props.teamUrl}/teams`)}
                   <div className="teamInfos">
                     <div>
                       <img src={team.crestUrl} alt="écusson de l'équipe" />
@@ -125,7 +132,7 @@ class Teams extends Component {
                   <div className="buttonsContainer">
                     <div className="animated fadeInUp">
                       <PlayersDialog
-                        playersUrl={team._links.players.href}
+                        playersUrl={team.id}
                         teamName={team.name}
                         teamLogo={team.crestUrl}
                         updateSearch={this.updateSearchPlayer}
@@ -134,7 +141,7 @@ class Teams extends Component {
                     </div>
                     <div className="animated fadeInUp">
                       <FixturesDialog
-                        fixturesUrl={team._links.fixtures.href}
+                        fixturesUrl={team.id}
                         teamName={team.name}
                         teamLogo={team.crestUrl}
                         updateSearch={this.updateSearchFixture}

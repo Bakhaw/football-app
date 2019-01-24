@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import config from '../../key'
+import config from "../../key";
 
 import CircularProgress from "material-ui/CircularProgress";
 
@@ -26,17 +26,22 @@ class LeagueTable extends Component {
 
   // fetch players
   async componentWillMount() {
-
     try {
-      const res = await axios.get(`http://api.football-data.org/v1/competitions/${this.props.teamUrl}/leagueTable/`, config);
-      const table = await res.data;
-      this.setState({ table: [table], fetched: true });
+      const res = await axios.get(
+        `http://api.football-data.org/v2/competitions/${
+          this.props.teamUrl
+        }/standings/`,
+        config
+      );
+      const table = await res.data.standings[0].table;
+      this.setState({ table, fetched: true });
     } catch (error) {
       console.log(error.response);
     }
   }
 
   render() {
+    console.log(this.state.table);
     return (
       <div>
         {!this.state.fetched && (
@@ -90,7 +95,7 @@ class LeagueTable extends Component {
                 </TableHeader>
               </Table>
             </li>
-            {this.state.table[0].standing.map((data, index) => (
+            {this.state.table.map((data, index) => (
               <li key={index}>
                 <Table>
                   <TableBody displayRowCheckbox={false} showRowHover={true}>
@@ -100,11 +105,11 @@ class LeagueTable extends Component {
                       </TableRowColumn>
                       <TableRowColumn className="teamRow">
                         <img
-                          src={data.crestURI}
+                          src={data.team.crestUrl}
                           alt="écusson"
                           className="imgRow"
                         />{" "}
-                        {data.teamName}
+                        {data.team.name}
                       </TableRowColumn>
                       <TableRowColumn className="pointsRow">
                         {data.points}
@@ -113,16 +118,16 @@ class LeagueTable extends Component {
                         {data.playedGames}
                       </TableRowColumn>
                       <TableRowColumn className="winRow">
-                        {data.wins}
+                        {data.won}
                       </TableRowColumn>
                       <TableRowColumn className="drawRow">
-                        {data.draws}
+                        {data.draw}
                       </TableRowColumn>
                       <TableRowColumn className="loseRow">
-                        {data.losses}
+                        {data.lost}
                       </TableRowColumn>
                       <TableRowColumn className="goalsRow">
-                        {data.goals}
+                        {data.goalsFor}
                       </TableRowColumn>
                       <TableRowColumn className="goalsRow">
                         {data.goalsAgainst}
